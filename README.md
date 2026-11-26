@@ -1,6 +1,6 @@
+
 <div align="center">
-<div align="center">
-  <img src="https://raw.githubusercontent.com/1227akash/1227akash/main/akash-BANNER.png" alt="Akash Tiwari Banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/1227akash/1227akash/main/BANNER.png" alt="Akash Tiwari Banner" width="100%" />
 </div>
 
 <br>
