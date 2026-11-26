@@ -1,0 +1,172 @@
+name: Auto Update GitHub Profile
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update-profile.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update Profile README
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import json
+          import urllib.request
+          from collections import Counter
+          from pathlib import Path
+
+          USERNAME = "1227akash"
+          README = Path("README.md")
+          TOKEN = os.environ["GH_TOKEN"]
+
+          def github_api(endpoint):
+              request = urllib.request.Request(
+                  f"https://api.github.com/{endpoint}",
+                  headers={
+                      "Authorization": f"Bearer {TOKEN}",
+                      "Accept": "application/vnd.github+json",
+                      "User-Agent": "profile-updater"
+                  }
+              )
+              with urllib.request.urlopen(request) as response:
+                  return json.load(response)
+
+          repos = []
+          page = 1
+
+          while True:
+              batch = github_api(
+                  f"users/{USERNAME}/repos?per_page=100&page={page}&sort=updated"
+              )
+              if not batch:
+                  break
+              repos.extend(batch)
+              page += 1
+
+          repos = [
+              repo for repo in repos
+              if not repo["fork"]
+              and not repo["private"]
+              and repo["name"] != USERNAME
+          ]
+
+          repos.sort(
+              key=lambda repo: repo["updated_at"],
+              reverse=True
+          )
+
+          languages = Counter()
+
+          for repo in repos:
+              try:
+                  data = github_api(
+                      f"repos/{USERNAME}/{repo['name']}/languages"
+                  )
+                  languages.update(data)
+              except Exception as error:
+                  print(f"Language fetch failed: {error}")
+
+          lines = [
+              "## 🚀 My Public Projects",
+              "",
+              "Automatically updated from my GitHub repositories.",
+              "",
+              "| Project | Description |",
+              "|---------|-------------|"
+          ]
+
+          for repo in repos:
+              name = repo["name"].replace("|", "\\|")
+              description = (
+                  repo.get("description")
+                  or "Explore this project on GitHub."
+              )
+              description = description.replace("|", "\\|").replace("\n", " ")
+              url = repo["html_url"]
+
+              lines.append(
+                  f"| [{name}]({url}) | {description} |"
+              )
+
+          if not repos:
+              lines.append(
+                  "| No public projects yet | New projects will appear here. |"
+              )
+
+          lines.extend([
+              "",
+              "## 🛠️ Languages Used Across My Public Repositories",
+              ""
+          ])
+
+          if languages:
+              total = sum(languages.values())
+
+              for language, count in languages.most_common():
+                  percentage = count / total * 100
+                  lines.append(
+                      f"- **{language}** — {percentage:.1f}%"
+                  )
+          else:
+              lines.append("Languages will appear automatically.")
+
+          lines.extend([
+              "",
+              f"📦 **Total Public Projects:** {len(repos)}",
+              "",
+          ])
+
+          generated = "\n".join(lines)
+
+          start = "<!-- AUTO-UPDATE:START -->"
+          end = "<!-- AUTO-UPDATE:END -->"
+
+          content = README.read_text(encoding="utf-8")
+
+          block = f"{start}\n{generated}\n{end}"
+
+          if start in content and end in content:
+              content = re.sub(
+                  re.escape(start) + r".*?" + re.escape(end),
+                  lambda match: block,
+                  content,
+                  flags=re.DOTALL
+              )
+          else:
+              content += "\n\n---\n\n" + block + "\n"
+
+          README.write_text(content, encoding="utf-8")
+          PY
+
+      - name: Commit Updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto update GitHub profile"
+            git push
+          fi
