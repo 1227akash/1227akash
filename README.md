@@ -153,19 +153,31 @@ Automatically updated from my GitHub repositories.
 
 | Project | Description |
 |---------|-------------|
+| [antigem-standalone](https://github.com/1227akash/antigem-standalone) | Explore this project on GitHub. |
+| [Horizon-Player](https://github.com/1227akash/Horizon-Player) | Cinema & Hi-Res Audio Media Player for Android • Liquid Glass OLED • 100% Private |
+| [Craft-Anything](https://github.com/1227akash/Craft-Anything) | An open-source creative development toolkit. |
 | [Echo-Music](https://github.com/1227akash/Echo-Music) | Explore this project on GitHub. |
 | [Vc_Player](https://github.com/1227akash/Vc_Player) | Video and audio player with advanced features  |
 
 ## 🛠️ Languages Used Across My Public Repositories
 
-- **Kotlin** — 96.7%
-- **GLSL** — 1.9%
-- **C++** — 1.3%
-- **Java** — 0.1%
+- **Kotlin** — 69.7%
+- **Rust** — 25.0%
+- **Go** — 1.7%
+- **GLSL** — 1.3%
+- **JavaScript** — 0.8%
+- **C++** — 0.5%
+- **Shell** — 0.3%
+- **Java** — 0.3%
+- **Python** — 0.3%
+- **PowerShell** — 0.0%
+- **CSS** — 0.0%
+- **C** — 0.0%
+- **Swift** — 0.0%
 - **HTML** — 0.0%
-- **Python** — 0.0%
 - **CMake** — 0.0%
+- **Handlebars** — 0.0%
 
-📦 **Total Public Projects:** 2
+📦 **Total Public Projects:** 5
 
 <!-- AUTO-UPDATE:END -->
