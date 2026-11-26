@@ -142,3 +142,30 @@ professional, and user-friendly digital experience.
 ⭐ Thanks for visiting my GitHub profile!
 
 </div>
+
+
+---
+
+<!-- AUTO-UPDATE:START -->
+## 🚀 My Public Projects
+
+Automatically updated from my GitHub repositories.
+
+| Project | Description |
+|---------|-------------|
+| [Echo-Music](https://github.com/1227akash/Echo-Music) | Explore this project on GitHub. |
+| [Vc_Player](https://github.com/1227akash/Vc_Player) | Video and audio player with advanced features  |
+
+## 🛠️ Languages Used Across My Public Repositories
+
+- **Kotlin** — 96.7%
+- **GLSL** — 1.9%
+- **C++** — 1.3%
+- **Java** — 0.1%
+- **HTML** — 0.0%
+- **Python** — 0.0%
+- **CMake** — 0.0%
+
+📦 **Total Public Projects:** 2
+
+<!-- AUTO-UPDATE:END -->
