@@ -153,24 +153,23 @@ Automatically updated from my GitHub repositories.
 
 | Project | Description |
 |---------|-------------|
+| [Echo-Music](https://github.com/1227akash/Echo-Music) | Explore this project on GitHub. |
 | [antigem-standalone](https://github.com/1227akash/antigem-standalone) | Explore this project on GitHub. |
 | [Horizon-Player](https://github.com/1227akash/Horizon-Player) | Cinema & Hi-Res Audio Media Player for Android • Liquid Glass OLED • 100% Private |
 | [Craft-Anything](https://github.com/1227akash/Craft-Anything) | An open-source creative development toolkit. |
-| [Echo-Music](https://github.com/1227akash/Echo-Music) | Explore this project on GitHub. |
-| [Vc_Player](https://github.com/1227akash/Vc_Player) | Video and audio player with advanced features  |
 
 ## 🛠️ Languages Used Across My Public Repositories
 
-- **Kotlin** — 69.7%
-- **Rust** — 25.0%
-- **Go** — 1.7%
-- **GLSL** — 1.3%
-- **JavaScript** — 0.8%
+- **Kotlin** — 64.7%
+- **Rust** — 29.8%
+- **Go** — 2.0%
+- **JavaScript** — 0.9%
+- **GLSL** — 0.8%
 - **C++** — 0.5%
-- **Shell** — 0.3%
-- **Java** — 0.3%
+- **Shell** — 0.4%
+- **Java** — 0.4%
 - **Python** — 0.3%
-- **PowerShell** — 0.0%
+- **PowerShell** — 0.1%
 - **CSS** — 0.0%
 - **C** — 0.0%
 - **Swift** — 0.0%
@@ -178,6 +177,6 @@ Automatically updated from my GitHub repositories.
 - **CMake** — 0.0%
 - **Handlebars** — 0.0%
 
-📦 **Total Public Projects:** 5
+📦 **Total Public Projects:** 4
 
 <!-- AUTO-UPDATE:END -->
