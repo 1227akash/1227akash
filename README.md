@@ -152,8 +152,8 @@ Automatically updated from my GitHub repositories.
 
 | Project | Description |
 |---------|-------------|
-| [Echo-Music](https://github.com/1227akash/Echo-Music) | Explore this project on GitHub. |
 | [antigem-standalone](https://github.com/1227akash/antigem-standalone) | Explore this project on GitHub. |
+| [Echo-Music](https://github.com/1227akash/Echo-Music) | Explore this project on GitHub. |
 | [Horizon-Player](https://github.com/1227akash/Horizon-Player) | Cinema & Hi-Res Audio Media Player for Android • Liquid Glass OLED • 100% Private |
 | [Craft-Anything](https://github.com/1227akash/Craft-Anything) | An open-source creative development toolkit. |
 
