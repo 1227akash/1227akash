@@ -63,10 +63,9 @@ creativity, and practical problem-solving.
 
 | Project | Description |
 |---------|-------------|
-| 🎵 **Vc_Player** | A music player application focused on a smooth listening experience. |
+| 💎 **antigem-standalone** | An AI coding workspace for Android: full Linux environment, code editor, and agents. |
+| 🎬 **Horizon-Player** | Cinema & Hi-Res Audio Media Player for Android • Liquid Glass OLED • 100% Private. |
 | 🎧 **Echo-Music** | A music application project with a focus on user experience. |
-| 🌊 **LastWave** | One of my application development projects. |
-| 🍎 **LastWave iOS** | The iOS project in the LastWave collection. |
 
 ### 🌐 Web Development
 
